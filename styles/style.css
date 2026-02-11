@@ -105,6 +105,7 @@ body{
 }
 
 .c-text{
+    width: 162px;
     margin-top: 20px;
     font-family: 'Pixelify Sans';
     font-size: 14px;
@@ -150,4 +151,3 @@ body{
 .hide{
     display: none;
 }
-
