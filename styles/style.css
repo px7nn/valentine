@@ -1,0 +1,149 @@
+:root {
+  /* bg-colors */
+  --primary: oklch(0.9 0.17 100);
+  --bg-dark: oklch(0.1 0 264);
+  --bg: oklch(0.2 0 264);
+  --bg-light: oklch(0.3 0 264);
+
+  /* text-colors */
+  --text: oklch(0.96 0 264);
+  --text-muted: oklch(0.76 0 264);
+
+  /* shadows */
+  --shadow-s:
+    inset 0 1px 2px #ffffff30, /* top highlight */
+    0 1px 2px #00000030,       /* dark shadow */
+    0 2px 4px #00000015;       /* soft shadow */
+
+  --shadow-m:
+    inset 0 1px 2px #ffffff50, /* top highlight */
+    0 2px 4px #00000030,       /* dark shadow */
+    0 4px 8px #00000015;       /* soft shadow */
+
+  --shadow-l:
+    inset 0 1px 2px #ffffff70, /* top highlight */
+    0 4px 6px #00000030,       /* dark shadow */
+    0 6px 10px #00000015;      /* soft shadow */
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    background: var(--bg-dark);
+    user-select: none;
+
+    color: var(--text);
+    font-family: Tahoma;
+    font-weight: bold;
+    position: relative;
+
+    overflow: hidden;
+}
+
+.window{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: fit-content;
+    width: fit-content;
+    border-radius: 10px;
+}
+
+.bar{
+    background: rgb(4, 17, 192);
+    height: 40px;
+    width: 250px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 10px 0 5px;
+}
+
+.buttons{
+    margin-left: auto;
+}
+
+.close{
+    height: 25px;
+    width: 25px;
+    background-color: rgb(255, 164, 164);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    border: 1px solid white;
+}
+
+
+
+.c-area{
+    height: 260px;
+    background: rgb(253, 246, 224);
+    color: black;
+    border: 3.5px solid rgb(4, 17, 192);
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.top{
+    display: flex;
+}
+
+.c-icon img{
+    height: 70px;
+    padding: 10px;
+}
+
+.c-text{
+    margin-top: 20px;
+    font-family: 'Pixelify Sans';
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.c-buttons{
+    display: flex;
+    gap: 15px;
+    margin-top: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+    margin-right: 10px;
+}
+
+.yes, .no{
+    left: 50%;
+    background: white;
+    font-size: small;
+    font-weight: 100;
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 5px 20px 5px 20px;
+    transition: 500ms ease;
+}
+
+.yes:hover{
+    transform: scale(1.1);
+}
+
+.cat{
+    height: 0px;
+    opacity: 0;
+    overflow: hidden;
+    transition: 1000ms ease;
+}
+
+.cat-animate{
+    height: 150px;
+    opacity: 1;
+}
+
+.hide{
+    display: none;
+}
+
