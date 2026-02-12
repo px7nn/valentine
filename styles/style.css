@@ -30,9 +30,10 @@ body{
     margin: 0;
     height: 100vh;
     background: var(--bg-dark);
-    background-image: url('../images/idk.gif');
+    background-image: url('../images/back.gif');
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     backdrop-filter: blur(10px);
     user-select: none;
 
