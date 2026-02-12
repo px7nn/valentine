@@ -27,8 +27,8 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: fit-content;
-    width: 250px;
+    height: 350px;
+    width: 300px;
     border-radius: 10px 10px 0 0;
     display: flex;
     flex-direction: column;
@@ -66,7 +66,7 @@ body{
 
 
 .c-area{
-    height: 250px;
+    height: calc(100% - 40px);
     width: 100%;
     background: rgb(253, 246, 224);
     color: black;
@@ -74,7 +74,6 @@ body{
     border-top: none;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
 }
 
@@ -88,7 +87,7 @@ body{
 }
 
 .c-text{
-    width: 162px;
+    width: 180px;
     margin-top: 20px;
     font-family: 'Pixelify Sans';
     font-size: 14px;
@@ -113,6 +112,7 @@ body{
     border: 1px solid var(--border);
     border-radius: 3px;
     padding: 5px 20px 5px 20px;
+    cursor: pointer;
 }
 
 .no{
@@ -133,6 +133,9 @@ body{
 
 .cat-animate{
     height: 150px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
     opacity: 1;
 }
 

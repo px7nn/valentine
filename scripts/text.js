@@ -9,19 +9,76 @@ document.querySelector('.click-to-start').addEventListener("pointerdown", () => 
 })
 
 const text = [
-    "I miss you/"+ 
-    "And I hate the/"+ 
-    "distance between us/",
+    "Valentine’s Day feels strange/",
+    "when the one I love/"+
+    "is miles away./",
 
-    "Every second without you/"+ 
-    "feels longer than it should/",
+    "I am happy with you,//"+
+    "truly, I am.///"+
 
-    "So tell me…/",
+    "But happiness makes me fragile—/",
 
-    "Will you be mine?/"+
-    "/"+
-    "Will you be my valentine...??"
-]
+    "Love makes me fragile—//"+
+    "Cause it doesn’t always stays./"+
+    "It fades.//"+
+    "And I’m scared"+
+    " of watching it disappear.",
+
+    "So I promise. . ./",
+    "I’ll hug you tight—/",
+    "maybe a little tighter./",
+
+    "Tight enough to keep you close,//"+
+    "but loose enough/"+
+    "so you can still breathe.///"+
+    "I promise. . ./",
+
+    "I promise I’ll fight my fate//"+
+    "if it ever tries/"+
+    "to take you away./",
+
+    "I trust you.//"+
+    "I really do./",
+
+    "But my mind. . .//"+
+    "it writes cruel little stories//"+
+    "where I’m the one///"+
+    "left behind./",
+
+    "Still—///"+
+    "I stay./",
+
+    "Because loving you//"+
+    "feels worth the fear,///"+
+    "even if my hands shake/"+
+    "while holding on to something/"+
+    "precious./",
+
+    "I don’t want perfect./",
+    "I don’t want grand gestures./",
+
+    "I just want us—//",
+
+    "choosing each other////"+
+    "again and again./",
+
+    "So tell me. . ./",
+    "will you walk with me?/",
+
+    "Tell me—//"+
+    "am I worthy of this place that I'm asking for. . .//",
+
+    "Tell me—/",
+    "Am I worthy of your heart?/",
+
+    "Not just for today.//"+
+    "Not just for tomorrow./",
+
+    "But for the end of time…/",
+
+    "Can I be your Valentine?/"
+];
+
 
 let indx = 0, isTyping = false;
 
@@ -42,7 +99,7 @@ function ShowText(){
     c_text.innerHTML = "";
     isTyping = true;
     yesBTN.classList.add('hide'); 
-    let delay = 50
+    let delay = 0
     for(let ch of text[indx]){
         setTimeout(()=>{
             if(ch==="/")
@@ -53,7 +110,7 @@ function ShowText(){
             if(ch !== " " && ch !== "/")
                 PlayeType();
         }, delay)
-        delay += 50 + Math.random() * (100)
+        delay += Math.random() * (100)
     }
     setTimeout(()=>{
         yesBTN.classList.remove('hide');
@@ -67,7 +124,7 @@ function ShowText(){
 
 function PlayeType(){
     const soundClone = typeSound.cloneNode();
-    soundClone.playbackRate = 0.9 + Math.random() * 0.1;
-    soundClone.volume = 0.05;
+    soundClone.playbackRate = 0.9 + Math.random() * 0.2;
+    soundClone.volume = 0.1;
     soundClone.play();
 }
