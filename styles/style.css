@@ -1,44 +1,21 @@
 :root {
-  /* bg-colors */
-  --primary: oklch(0.9 0.17 100);
-  --bg-dark: oklch(0.1 0 264);
-  --bg: oklch(0.2 0 264);
-  --bg-light: oklch(0.3 0 264);
-
-  /* text-colors */
-  --text: oklch(0.96 0 264);
-  --text-muted: oklch(0.76 0 264);
-
-  /* shadows */
-  --shadow-s:
-    inset 0 1px 2px #ffffff30, /* top highlight */
-    0 1px 2px #00000030,       /* dark shadow */
-    0 2px 4px #00000015;       /* soft shadow */
-
-  --shadow-m:
-    inset 0 1px 2px #ffffff50, /* top highlight */
-    0 2px 4px #00000030,       /* dark shadow */
-    0 4px 8px #00000015;       /* soft shadow */
-
-  --shadow-l:
-    inset 0 1px 2px #ffffff70, /* top highlight */
-    0 4px 6px #00000030,       /* dark shadow */
-    0 6px 10px #00000015;      /* soft shadow */
+    --bg-dark: oklch(0.1 0 264);
+    --border: rgb(8,39,245);
 }
 
 body{
     margin: 0;
     height: 100vh;
     background: var(--bg-dark);
-    background-image: url('../images/back.gif');
+    background-image: url('../images/liminal.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(4px) brightness(100%);
     user-select: none;
 
-    color: var(--text);
-    font-family: Tahoma;
+    color: white;
+    font-family: 'Verdana';
     font-weight: bold;
     position: relative;
 
@@ -51,19 +28,24 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     height: fit-content;
-    width: fit-content;
-    border-radius: 10px;
+    width: 250px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .bar{
-    background: rgb(4, 17, 192);
+    background: var(--border);
     height: 40px;
-    width: 250px;
+    width: 100%;
     border-radius: 10px 10px 0 0;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0 10px 0 5px;
+    border-left: 5px solid var(--border);
+    border-right: 5px solid var(--border);
 }
 
 .buttons{
@@ -84,12 +66,12 @@ body{
 
 
 .c-area{
-    height: 260px;
+    height: 250px;
+    width: 100%;
     background: rgb(253, 246, 224);
     color: black;
-    border: 3.5px solid rgb(4, 17, 192);
+    outline: 5px solid var(--border);
     border-top: none;
-    border-radius: 0 0 10px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -111,6 +93,7 @@ body{
     font-family: 'Pixelify Sans';
     font-size: 14px;
     font-weight: 100;
+    padding-right: 10px;
 }
 
 .c-buttons{
@@ -127,14 +110,18 @@ body{
     background: white;
     font-size: small;
     font-weight: 100;
-    border: 1px solid gray;
+    border: 1px solid var(--border);
     border-radius: 3px;
     padding: 5px 20px 5px 20px;
-    transition: 500ms ease;
+}
+
+.no{
+    border-color: gray;
+    transition: 500ms ease-in;
 }
 
 .yes:hover{
-    transform: scale(1.1);
+    border-color: gray;
 }
 
 .cat{
