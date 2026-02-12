@@ -1,6 +1,13 @@
 const c_text = document.querySelector('.c-text')
 const yesBTN = document.querySelector('.yes')
 const noBTN = document.querySelector('.no')
+const typeSound = document.getElementById("typeSound")
+
+document.querySelector('.click-to-start').addEventListener("pointerdown", () => {
+    document.querySelector('.click-to-start').remove();
+    ShowText()
+})
+
 const text = [
     "I miss you/"+ 
     "And I hate the/"+ 
@@ -17,7 +24,6 @@ const text = [
 ]
 
 let indx = 0, isTyping = false;
-ShowText()
 
 yesBTN.addEventListener("click", () => {
     if(!isTyping) YesHandler();
@@ -43,6 +49,9 @@ function ShowText(){
                 c_text.innerHTML += "<br>"
             else
                 c_text.innerHTML += ch
+
+            if(ch !== " " && ch !== "/")
+                PlayeType();
         }, delay)
         delay += 50 + Math.random() * (100)
     }
@@ -56,5 +65,9 @@ function ShowText(){
 
 }
 
-
-console.log(text);
+function PlayeType(){
+    const soundClone = typeSound.cloneNode();
+    soundClone.playbackRate = 0.9 + Math.random() * 0.1;
+    soundClone.volume = 0.05;
+    soundClone.play();
+}
